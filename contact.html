@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact & Payment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 30px;
+      margin: auto;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 200px;
+      margin: 20px 0;
+    }
+
+    input, textarea {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #1976d2;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0d47a1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Pay for <span id="courseName">Course</span></h2>
+    <p>Scan the QR below and pay using UPI, then share your details.</p>
+
+    <img src="qr.png" alt="QR Code" />
+
+    <form onsubmit="submitForm(event)">
+      <input type="text" placeholder="Your Name" required><br>
+      <input type="email" placeholder="Your Email" required><br>
+      <input type="text" placeholder="Transaction ID / Screenshot link" required><br>
+      <textarea placeholder="Any message..." rows="3"></textarea><br>
+      <button type="submit">Submit Details</button>
+    </form>
+  </div>
+
+  <script>
+    // Show course name from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const course = urlParams.get('course');
+    if (course) {
+      document.getElementById("courseName").textContent = course;
+    }
+
+    function submitForm(e) {
+      e.preventDefault();
+      alert("Thanks! We'll verify your payment and get back to you.");
+      window.location.href = "dashboard.html";
+    }
+  </script>
+
+</body>
+</html>

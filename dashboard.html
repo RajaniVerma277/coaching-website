@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <!-- Top Banner -->
+  <div class="banner">
+    <h2>📘 Classes from 1 to 12 Available Here</h2>
+  </div>
+
+  <!-- Demo Class Cards -->
+  <div class="container">
+    <div class="card" onclick="toggleDemo('class9')">
+      <h3>🎓 Demo Classes for Class 9</h3>
+      <ul id="class9" class="demo-list hidden">
+        <li><a href="#">Class 9 - Demo 1</a></li>
+        <li><a href="#">Class 9 - Demo 2</a></li>
+        <li><a href="#">Class 9 - Demo 3</a></li>
+        <li><a href="#">Class 9 - Demo 4</a></li>
+        <li><a href="#">Class 9 - Demo 5</a></li>
+      </ul>
+    </div>
+
+    <div class="card" onclick="toggleDemo('class10')">
+      <h3>🎓 Demo Classes for Class 10</h3>
+      <ul id="class10" class="demo-list hidden">
+        <li><a href="#">Class 10 - Demo 1</a></li>
+        <li><a href="#">Class 10 - Demo 2</a></li>
+        <li><a href="#">Class 10 - Demo 3</a></li>
+        <li><a href="#">Class 10 - Demo 4</a></li>
+        <li><a href="#">Class 10 - Demo 5</a></li>
+      </ul>
+    </div>
+
+    <div class="card" onclick="toggleDemo('class11')">
+      <h3>🎓 Demo Classes for Class 11</h3>
+      <ul id="class11" class="demo-list hidden">
+        <li><a href="#">Class 11 - Demo 1</a></li>
+        <li><a href="#">Class 11 - Demo 2</a></li>
+        <li><a href="#">Class 11 - Demo 3</a></li>
+        <li><a href="#">Class 11 - Demo 4</a></li>
+        <li><a href="#">Class 11 - Demo 5</a></li>
+      </ul>
+    </div>
+
+    <div class="card" onclick="toggleDemo('class12')">
+      <h3>🎓 Demo Classes for Class 12</h3>
+      <ul id="class12" class="demo-list hidden">
+        <li><a href="#">Class 12 - Demo 1</a></li>
+        <li><a href="#">Class 12 - Demo 2</a></li>
+        <li><a href="#">Class 12 - Demo 3</a></li>
+        <li><a href="#">Class 12 - Demo 4</a></li>
+        <li><a href="#">Class 12 - Demo 5</a></li>
+      </ul>
+    </div>
+  </div>
+
+  
+  <!-- 🔹 Purchase Courses Section -->
+<section class="purchase-section">
+    <h2>📘 Buy Full Courses</h2>
+  
+    <div class="card" onclick="location.href='contact.html?course=Class9'">
+      <h3>Class 9 Course – ₹999</h3>
+      <p>Includes live classes + recordings</p>
+    </div>
+  
+    <div class="card" onclick="location.href='contact.html?course=Class10'">
+      <h3>Class 10 Course – ₹999</h3>
+      <p>Includes live classes + recordings</p>
+    </div>
+  
+    <div class="card" onclick="location.href='contact.html?course=Class11'">
+      <h3>Class 11 Course – ₹1299</h3>
+      <p>Includes live classes + recordings</p>
+    </div>
+  
+    <div class="card" onclick="location.href='contact.html?course=Class12'">
+      <h3>Class 12 Course – ₹1299</h3>
+      <p>Includes live classes + recordings</p>
+    </div>
+  </section>
+  
+  
+
+  <script src="dashboard.js"></script>
+  
+</body>
+</html>
+
+
