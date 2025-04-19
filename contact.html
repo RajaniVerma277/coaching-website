@@ -4,45 +4,60 @@
   <title>Contact & Payment</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f2f2f2;
-      text-align: center;
-      padding: 40px;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e3f2fd, #ffffff);
+      padding: 30px;
+      color: #333;
     }
 
     .card {
-      background: #fff;
-      padding: 30px;
-      margin: auto;
+      background-color: #ffffff;
       max-width: 500px;
+      margin: 0 auto;
+      padding: 25px 30px;
       border-radius: 15px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
 
-    .card img {
+    h2 {
+      color: #1976d2;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    img {
       width: 200px;
-      margin: 20px 0;
+      margin-bottom: 20px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
     }
 
     input, textarea {
-      width: 90%;
+      width: 100%;
       padding: 10px;
-      margin: 10px 0;
-      border-radius: 8px;
+      margin: 8px 0;
       border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-size: 16px;
     }
 
     button {
       background-color: #1976d2;
       color: white;
-      padding: 10px 20px;
+      padding: 12px 25px;
       border: none;
-      border-radius: 25px;
+      border-radius: 8px;
       cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
     }
 
     button:hover {
-      background-color: #0d47a1;
+      background-color: #135ca8;
     }
   </style>
 </head>
@@ -64,18 +79,30 @@
   </div>
 
   <script>
-    // Show course name from URL
     const urlParams = new URLSearchParams(window.location.search);
     const course = urlParams.get('course');
+  
     if (course) {
       document.getElementById("courseName").textContent = course;
     }
-
+  
     function submitForm(e) {
       e.preventDefault();
+      
+      const email = document.querySelector('input[type="email"]').value;
+  
+      // Store course and email for login match
+      if (course && email) {
+        localStorage.setItem("purchasedCourse", "batch" + course); // e.g., batch9
+        localStorage.setItem("purchasedEmail", email);
+      }
+  
       alert("Thanks! We'll verify your payment and get back to you.");
       window.location.href = "dashboard.html";
     }
+  </script>
+  
+
   </script>
 
 </body>
